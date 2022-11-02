@@ -1,3 +1,5 @@
 {
-    "livePreview.defaultPreviewPath": "d:\\IBM\\News Tracker\\ASSIGNMENT3\\index.html"
+    "livePreview.defaultPreviewPath": "d:\\IBM\\News Tracker\\ASSIGNMENT3\\index.html",
+    "search.useGlobalIgnoreFiles": true,
+    "search.useIgnoreFiles": true,
 }
