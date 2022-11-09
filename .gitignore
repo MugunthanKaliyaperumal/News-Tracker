@@ -2,3 +2,4 @@
 *.crt
 config.py
 __pycache__
+*.json
