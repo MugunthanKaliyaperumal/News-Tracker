@@ -1,2 +1,11 @@
-<h1> hi u have succefully logged in </h1>
+<h1>hi u have succefully logged in</h1>
 <a href="{{url_for('logout')}}">Logout</a>
+<input type="text" placeholder="language" id="language" />
+<script
+  src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"
+></script>
+<input type="button" value="get news !" id="getNews" />
+<span type="json" id="news"></span>
+<script src="{{url_for('static',filename='ajaxRequests.js')}}"></script>

@@ -51,4 +51,24 @@ $(document).ready(function () {
       },
     });
   });
+
+  $("#getNews").click(function(){
+    language=$("#language").val();
+    var queryString={language : language};
+    $.ajax({
+      method: "POST",
+      url: "/news",
+      contentType: "application/json;charset=utf-8",
+      cache: false,
+      datatype: "text",
+      data: JSON.stringify(queryString),
+      success: function (data) {
+        alert("yes")
+        $("#news").text(data)
+      },
+      error: function (data) {
+        alert("error")
+      },
+    })
+  })
 });

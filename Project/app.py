@@ -2,6 +2,8 @@ from flask import Flask, render_template, session, url_for, request, redirect,ma
 import random
 import ibm_db
 import ibm_db2_connect
+import news
+import json
 # testing
 app = Flask(__name__)
 app.secret_key = "secret_key"
@@ -71,10 +73,23 @@ def register():
         print(e)
     return redirect('/')
 
+
+@app.route('/news',methods=['POST'])
+def getNews():
+    getRequests=request.get_json()
+    articles=news.getNews(getRequests)
+    print(json.dumps(articles))
+    response = make_response(json.dumps(articles),200)
+    response.mimetype="text"
+    return response
+
+
 @app.route('/logout')
 def logout():
     session.clear()
     return render_template('index.html')
+
+
 
 def getUid(username,usermobile):
     return random.randint(1,100000)
